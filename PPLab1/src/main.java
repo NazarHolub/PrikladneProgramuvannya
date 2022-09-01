@@ -1,28 +1,29 @@
 import java.util.Scanner;
 
-class lukeNumbers {
+class LukeNumbers {
     int n;
     double fi;
     double mfi;
-    lukeNumbers(int _n){
-        this.n = _n;
-        fi = (1+Math.sqrt(5))/2;
-        mfi = (1-Math.sqrt(5))/2;
+
+    LukeNumbers(int num) {
+        this.n = num;
+        fi = (1 + Math.sqrt(5)) / 2;
+        mfi = (1 - Math.sqrt(5)) / 2;
     }
 
-    public void ShowSimple(){
+    public void showSimple() {
         int number;
         boolean flag;
-        for(int i =1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
             flag = true;
-            number = (int)(Math.pow(fi,i) + Math.pow(mfi,i));
-            for (int j = 2; j < number; j++){
-                if(number % j == 0){
+            number = (int) (Math.pow(fi, i) + Math.pow(mfi, i));
+            for (int j = 2; j < number; j++) {
+                if (number % j == 0) {
                     flag = false;
                 }
 
             }
-            if(flag == true){
+            if (flag == true) {
                 System.out.println(" " + number + " \n");
             }
 
@@ -34,14 +35,14 @@ class lukeNumbers {
 public class main {
     public static void main(String[] args) {
 
-        Scanner sc= new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter number- ");
 
-        int num= sc.nextInt();
+        int num = sc.nextInt();
 
-        lukeNumbers numbers = new lukeNumbers(num);
+        LukeNumbers numbers = new LukeNumbers(num);
 
-        numbers.ShowSimple();
+        numbers.showSimple();
 
     }
 }
