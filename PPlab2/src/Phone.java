@@ -60,4 +60,14 @@ public class Phone {
         if(time >= 0)
             outTime = time;
     }
+    public String toString() {
+
+        return "Id: " + this.GetId() + "\t"
+                +"Name: " + this.GetName() + "\t"
+                +"Middle Name: " + this.GetMiddleName() + "\t"
+                +"Number: " + this.GetNumber() + "\t"
+                +"In and out city calling time: " + this.GetinTime() + " "+ this.GetOutTime();
+
+    }
+
 }

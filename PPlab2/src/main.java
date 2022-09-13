@@ -9,7 +9,7 @@ public class main {
                 new Phone(3, "Valetin", "Olegovich", 126, 1, 3),
 
         };
-        Show(arr);
+        show(arr);
 
         System.out.println("1) відомості про абонентів, у яких час міських розмов перевищує заданий;\n" +
                 "2) відомості про абонентів, які користувались міжміським зв'язком;\n" +
@@ -25,7 +25,12 @@ public class main {
                 intercityCallsCheck(arr);
                 break;
             case 3:
-                numberInDiapazon(arr, 100, 115);
+                System.out.println("enter diapazon1:");
+                int a1 =input.nextInt();
+                System.out.println("enter diapazon2:");
+                int a2 = input.nextInt();
+
+                numberInDiapazon(arr, a1, a2);
                 break;
             default:
                 System.out.println("wrong");
@@ -33,13 +38,9 @@ public class main {
 
     }
 
-    static void Show(Phone[] arr) {
+    static void show(Phone[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.print("Id: " + arr[i].GetId() + "\t");
-            System.out.print("Name: " + arr[i].GetName() + "\t");
-            System.out.print("Middle Name: " + arr[i].GetMiddleName() + "\t");
-            System.out.print("Number: " + arr[i].GetNumber() + "\t");
-            System.out.println("In and out city calling time: " + arr[i].GetinTime() + " "+ arr[i].GetOutTime());
+            System.out.println(arr[i]);
 
         }
     }
@@ -47,7 +48,7 @@ public class main {
     static void cityCallsCheck(Phone[] arr, double limit) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].GetinTime() > limit) {
-                System.out.print("Name: " + arr[i].GetName() + "\t");
+                System.out.println(arr[i].toString());
             }
         }
     }
@@ -55,8 +56,7 @@ public class main {
     static void intercityCallsCheck(Phone[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].GetOutTime() > 0) {
-                System.out.print("Name: " + arr[i].GetName() + "\t");
-                System.out.print("Intercity calling time: " + arr[i].GetOutTime() + "\n");
+                System.out.println(arr[i].toString());
             }
         }
     }
@@ -64,8 +64,7 @@ public class main {
     static void numberInDiapazon(Phone[] arr, int d1, int d2) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].GetNumber() >= d1 && arr[i].GetNumber() <= d2) {
-                System.out.print("Name: " + arr[i].GetName() + "\t");
-                System.out.print("Number: " + arr[i].GetNumber() + "\n");
+                System.out.println(arr[i].toString());
             }
         }
     }
