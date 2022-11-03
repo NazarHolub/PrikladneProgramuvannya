@@ -7,14 +7,13 @@ public class Droid {
 
     public Droid(){}
     public Droid(String n, int h, int d){
-        name =n;
+        this.name =n;
         health =h;
         damage =d;
     }
 
-    public void showDroid(){
-        System.out.println("droid:");
-        System.out.println("name: "+name+" health: "+health+" damage: "+damage);
+    public String showDroid(){
+        return "droid:"+"\nname: "+name+" health: "+health+" damage: "+damage;
     }
     public String takeDamage(int dmg){
         health -= dmg;

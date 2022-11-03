@@ -16,8 +16,8 @@ public class ArmoredDroid extends Droid{
         return name + "is damaged by " + dmg;
     }
 
-    public void showDroid(){
-        System.out.println("     ____\n" +
+    public String showDroid(){
+        return"\n           ____\n" +
                 "          / ___\\\n" +
                 "         |: =O =O\n" +
                 "         |:: __ |\n" +
@@ -38,8 +38,8 @@ public class ArmoredDroid extends Droid{
                 "       |___|  |__;|\n" +
                 "       P%%%Y  P%%%Y\n" +
                 "       b%%%d  b%%%d   \n" +
-                "       |   |  |   |");
-        System.out.println("name: "+name+" health: "+health+" damage: "+damage+" armor: "+armor);
+                "       |   |  |   |"+
+                "name: "+name+" health: "+health+" damage: "+damage+" armor: "+armor;
     }
 
     public void setArmor(int armor) {

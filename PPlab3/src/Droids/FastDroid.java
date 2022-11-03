@@ -21,8 +21,8 @@ public class FastDroid extends Droid{
         return name + "is damaged by " + dmg;
     }
 
-    public void showDroid(){
-        System.out.println("     ,------.._\n" +
+    public String showDroid(){
+        return"\n          ,------.._\n" +
                 "         (      o  o)\n" +
                 "        _.`--------'\n" +
                 "      .~  ~.   . `-.-~~~-.___      ____\n" +
@@ -36,8 +36,8 @@ public class FastDroid extends Droid{
                 "     LS    |  |     ~-._\\X/\n" +
                 "         .--.-~~-.\n" +
                 "        / ++| xx |\n" +
-                "       / ++/| xx |");
-        System.out.println("name: "+name+" health: "+health+" damage: "+damage+" dodge chance: "+dodgeChance);
+                "       / ++/| xx |"+
+                "name: "+name+" health: "+health+" damage: "+damage+" dodge chance: "+dodgeChance;
     }
 
     public void setDodgeChance(int dodgeChance) {
