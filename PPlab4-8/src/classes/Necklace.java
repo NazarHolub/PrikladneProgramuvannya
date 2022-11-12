@@ -40,7 +40,15 @@ public class Necklace implements ICost, Serializable {
             return (int)(d2.price - d1.price);
         });
     }
-
+    public void SetNecklace(Necklace n){
+        this.stones = n.stones;
+    }
+//    public List<Stone> GetStones(){
+//        return stones;
+//    }
+//    public void SetStones(List<Stone> s){
+//        stones = s;
+//    }
     @Override
     public String toString() {
         String lace = "Necklace: \n";

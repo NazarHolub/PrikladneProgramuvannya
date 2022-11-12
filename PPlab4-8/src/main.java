@@ -1,71 +1,37 @@
+import Commands.*;
 import classes.Necklace;
 import classes.Stone;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class main {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         int choice =0;
-        File file = new File("text.txt");
+        File file = new File("D:\\Univer\\PrikladneProgramuvannya\\projects\\PPlab4-8\\src\\text.txt");
         Necklace necklace = new Necklace();
+        Map<Integer, Command> commands = new HashMap<>();
+        commands.put(100, new ShowActionsCommand());
+        commands.put(1, new ShowNecklaceCommand(necklace));
+        commands.put(2, new AddStoneCommand(necklace));
+        commands.put(3, new WriteInFileCommand(necklace,file));
+        commands.put(4, new ReadFromFileCommand(necklace,file));
+        commands.put(5, new SortCommand(necklace));
+        commands.put(6, new ShowCostCommand(necklace));
+        commands.put(7, new ShowWeightCommand(necklace));
         do{
-            System.out.println("Choose an action: ");
-            System.out.println("1 show necklace");
-            System.out.println("2 add stone to necklace");
-            System.out.println("3 write to file");
-            System.out.println("4 read from file");
-            System.out.println("5 sort necklace by price");
-            System.out.println("6 Show necklace cost");
-            System.out.println("7 Show necklace weight");
-            System.out.println("0 exit");
+            commands.get(100).execute();
+
             Scanner myObj = new Scanner(System.in);
             choice = myObj.nextInt();
-            myObj.nextLine();
-            switch(choice){
-                case 1:
-                    System.out.print(necklace.toString());
-                    break;
 
-                case 2:
-                    System.out.println("Enter stone name: ");
-                    String name = myObj.nextLine();
-                    System.out.println("Enter stone carats: ");
-                    double carats = myObj.nextDouble();
+            if(choice>0 && choice<=7)
+                commands.get(choice).execute();
 
-                    System.out.println("Enter stone opacity: ");
-                    double opacity = myObj.nextDouble();
-
-                    System.out.println("Enter stone price: ");
-                    double price = myObj.nextDouble();
-                    Stone stone = new Stone(name,carats,opacity,price);
-                    necklace.AddStone(stone);
-                    break;
-
-                case 3:
-                    writeObjectInFile(file,necklace);
-                    break;
-
-                case 4:
-                    necklace = readObjectFromFile(file);
-                    break;
-                case 5:
-                    necklace.SortByPrice();
-                    break;
-                case 6:
-                    System.out.println(necklace.Cost());
-                    break;
-                case 7:
-                    System.out.println(necklace.Weight());
-                    break;
-                case 0:
-                    System.out.println("Exiting...");
-                    break;
-                default:
-                    System.out.println("ERROR!");
-            }
-            System.out.println("\n\n");
+            System.out.println("\n");
         }while(choice != 0);
     }
 
