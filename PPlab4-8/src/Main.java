@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         int choice =0;
-        File file = new File("D:\\Univer\\PrikladneProgramuvannya\\projects\\PPlab4-8\\src\\text.txt");
+        File file = new File("D:\\Univer\\PrikladneProgramuvannya\\projects\\PPlab4-8\\src\\resources\\text.txt");
         Necklace necklace = new Necklace();
         Map<Integer, Command> commands = new HashMap<>();
         commands.put(100, new ShowActionsCommand());
