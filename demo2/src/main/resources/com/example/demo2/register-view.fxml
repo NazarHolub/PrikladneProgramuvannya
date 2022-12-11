@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.RegisterController">
+    <children>
+        <AnchorPane layoutX="456.0" prefHeight="400.0" prefWidth="144.0" style="-fx-background-color: #F7DE3A;">
+            <children>
+                <Text fill="#7174bc" layoutX="23.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Necklace Shop">
+                    <font>
+                        <Font name="Vivaldi Italic" size="19.0" />
+                    </font>
+                </Text>
+                <ImageView fitHeight="211.0" fitWidth="150.0" layoutX="1.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.8;">
+                    <image>
+                        <Image url="https://cdn0.weddingwire.in/article/3643/original/1280/jpg/73463-diamond-necklace-design-house-of-misu-classic.jpeg" />
+                    </image>
+                </ImageView>
+                <Text fill="#7174bc" layoutX="2.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Nazar Holub KN-205" textAlignment="RIGHT" wrappingWidth="147.20000000000005">
+                    <font>
+                        <Font name="Vivaldi Italic" size="17.0" />
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+        <TextField fx:id="usernameField" layoutX="133.0" layoutY="100.0" prefHeight="26.0" prefWidth="199.0" promptText="username" style="-fx-background-color: #fafafa; -fx-border-color: #5e5e86; -fx-border-radius: 5;" />
+        <PasswordField fx:id="password1Field" layoutX="133.0" layoutY="144.0" prefHeight="26.0" prefWidth="199.0" promptText="password" style="-fx-background-color: #fafafa; -fx-border-radius: 5; -fx-border-color: #5e5e86;" />
+        <Text fill="#5e5e86" layoutX="133.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration" wrappingWidth="215.04339599609375">
+            <font>
+                <Font name="Calibri Bold" size="32.0" />
+            </font>
+        </Text>
+        <Button fx:id="signUpButton" layoutX="133.0" layoutY="261.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: #fafafa; -fx-border-radius: 5; -fx-border-color: #00A36C;" text="Sign Up!" />
+        <PasswordField fx:id="password2Field" layoutX="133.0" layoutY="186.0" prefHeight="26.0" prefWidth="199.0" promptText="confirm your password" style="-fx-background-color: #fafafa; -fx-border-radius: 5; -fx-border-color: #5e5e86;" />
+        <Button fx:id="loginButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #fafafa; -fx-border-radius: 5; -fx-border-color: #00A36C;" text="Log In!" />
+      <Label fx:id="incorrectLabel" layoutX="133.0" layoutY="229.0" text="Login or password is empty" textFill="#b22b27" visible="false" />
+    </children>
+</AnchorPane>
